@@ -28,6 +28,18 @@ export default function Navbar() {
           About
         </button>
         <button 
+          onClick={() => scrollToSection("skills")}
+          className="hover:text-gray-300 transition-colors"
+        >
+          Skills
+        </button>
+        <button 
+          onClick={() => scrollToSection("tools")}
+          className="hover:text-gray-300 transition-colors"
+        >
+          Tools
+        </button>
+        <button 
           onClick={() => scrollToSection("projects")}
           className="hover:text-gray-300 transition-colors"
         >

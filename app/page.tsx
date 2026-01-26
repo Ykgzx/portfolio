@@ -21,9 +21,14 @@ import {
   SiNotion,
   SiLinear,
   SiDiscord,
+  SiGmail,
+  SiPhonepe,
+  SiLine,
+  SiFacebook,
+  SiInstagram,
 } from "react-icons/si";
 
-import { VscCode, VscTerminal } from "react-icons/vsc"; // ← import ถูกต้องที่นี่
+import { VscCode, VscTerminal } from "react-icons/vsc";
 import { FaRobot } from "react-icons/fa";
 
 export default function Home() {
@@ -88,7 +93,6 @@ export default function Home() {
           className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-950 via-black to-gray-900 py-20 text-white"
         >
           <div className="max-w-7xl mx-auto px-6 w-full">
-            {/* หัวข้อ */}
             <div className="text-center mb-16">
               <h2 className="text-5xl md:text-6xl font-bold mb-4 tracking-tight">
                 Skills
@@ -96,7 +100,6 @@ export default function Home() {
               <div className="w-32 h-1 bg-emerald-500 mx-auto rounded-full mt-4"></div>
             </div>
 
-            {/* Grid ของ Skills */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 md:gap-8">
               {[
                 { name: "HTML", icon: <SiHtml5 className="text-5xl md:text-6xl text-orange-500" /> },
@@ -135,7 +138,6 @@ export default function Home() {
           className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-950 via-black to-gray-900 py-20 text-white"
         >
           <div className="max-w-7xl mx-auto px-6 w-full">
-            {/* หัวข้อ */}
             <div className="text-center mb-16">
               <h2 className="text-5xl md:text-6xl font-bold mb-4 tracking-tight">
                 Tools
@@ -143,7 +145,6 @@ export default function Home() {
               <div className="w-32 h-1 bg-emerald-500 mx-auto rounded-full mt-4"></div>
             </div>
 
-            {/* Grid ของ Tools */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 md:gap-8">
               {[
                 { name: "VS Code", icon: <VscCode className="text-5xl md:text-6xl text-blue-500" /> },
@@ -185,7 +186,6 @@ export default function Home() {
               My Projects
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* ตัวอย่าง Project Card */}
               {[...Array(6)].map((_, i) => (
                 <div 
                   key={i}
@@ -208,34 +208,86 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Section Contact */}
+        {/* Section Contact - ปรับใหม่สวยงาม */}
         <section 
           id="contact"
-          className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-black text-white py-20"
+          className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-20"
         >
-          <div className="text-center px-6 max-w-2xl">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+          <div className="max-w-5xl mx-auto px-6 text-center">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight">
               Let's Work Together
             </h2>
-            <p className="text-xl mb-10 opacity-90">
-              Have a project in mind? Let's chat!
+            <p className="text-xl md:text-2xl mb-16 opacity-90 max-w-3xl mx-auto">
+              Interested in collaborating or have any questions? Feel free to reach out via any of these channels!
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {/* Email */}
               <a 
                 href="mailto:your@email.com"
-                className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 rounded-full font-semibold transition"
+                className="group flex flex-col items-center p-6 bg-gray-800/60 backdrop-blur-md border border-gray-700 rounded-2xl transition-all duration-300 hover:bg-gray-700/80 hover:border-emerald-500/60 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20"
               >
-                Email Me
+                <SiGmail className="text-5xl md:text-6xl text-red-400 mb-4 transition-transform group-hover:scale-110" />
+                <h3 className="text-lg font-semibold text-gray-200 group-hover:text-emerald-400 transition-colors">
+                  Email
+                </h3>
+                <p className="text-sm text-gray-400 mt-1">your@email.com</p>
               </a>
+
+              {/* GitHub */}
               <a 
                 href="https://github.com/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-black rounded-full font-semibold transition"
+                className="group flex flex-col items-center p-6 bg-gray-800/60 backdrop-blur-md border border-gray-700 rounded-2xl transition-all duration-300 hover:bg-gray-700/80 hover:border-emerald-500/60 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20"
               >
-                View GitHub
+                <SiGithub className="text-5xl md:text-6xl text-white mb-4 transition-transform group-hover:scale-110" />
+                <h3 className="text-lg font-semibold text-gray-200 group-hover:text-emerald-400 transition-colors">
+                  GitHub
+                </h3>
+                <p className="text-sm text-gray-400 mt-1">@yourusername</p>
               </a>
+
+              {/* Phone */}
+              <div className="group flex flex-col items-center p-6 bg-gray-800/60 backdrop-blur-md border border-gray-700 rounded-2xl transition-all duration-300 hover:bg-gray-700/80 hover:border-emerald-500/60 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20">
+                <SiPhonepe className="text-5xl md:text-6xl text-green-400 mb-4 transition-transform group-hover:scale-110" />
+                <h3 className="text-lg font-semibold text-gray-200 group-hover:text-emerald-400 transition-colors">
+                  Phone
+                </h3>
+                <p className="text-sm text-gray-400 mt-1">+66 123-456-7890</p>
+              </div>
+
+              {/* Line */}
+              <div className="group flex flex-col items-center p-6 bg-gray-800/60 backdrop-blur-md border border-gray-700 rounded-2xl transition-all duration-300 hover:bg-gray-700/80 hover:border-emerald-500/60 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20">
+                <SiLine className="text-5xl md:text-6xl text-green-500 mb-4 transition-transform group-hover:scale-110" />
+                <h3 className="text-lg font-semibold text-gray-200 group-hover:text-emerald-400 transition-colors">
+                  Line
+                </h3>
+                <p className="text-sm text-gray-400 mt-1">@yourlineid</p>
+              </div>
+
+              {/* Facebook */}
+              <div className="group flex flex-col items-center p-6 bg-gray-800/60 backdrop-blur-md border border-gray-700 rounded-2xl transition-all duration-300 hover:bg-gray-700/80 hover:border-emerald-500/60 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20">
+                <SiFacebook className="text-5xl md:text-6xl text-blue-500 mb-4 transition-transform group-hover:scale-110" />
+                <h3 className="text-lg font-semibold text-gray-200 group-hover:text-emerald-400 transition-colors">
+                  Facebook
+                </h3>
+                <p className="text-sm text-gray-400 mt-1">yourfacebook</p>
+              </div>
+
+              {/* Instagram */}
+              <div className="group flex flex-col items-center p-6 bg-gray-800/60 backdrop-blur-md border border-gray-700 rounded-2xl transition-all duration-300 hover:bg-gray-700/80 hover:border-emerald-500/60 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20">
+                <SiInstagram className="text-5xl md:text-6xl text-pink-500 mb-4 transition-transform group-hover:scale-110" />
+                <h3 className="text-lg font-semibold text-gray-200 group-hover:text-emerald-400 transition-colors">
+                  Instagram
+                </h3>
+                <p className="text-sm text-gray-400 mt-1">@yourinstagram</p>
+              </div>
             </div>
+
+            <p className="mt-16 text-lg opacity-80">
+              Looking forward to hearing from you! 🚀
+            </p>
           </div>
         </section>
       </main>

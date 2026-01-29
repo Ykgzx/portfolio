@@ -59,30 +59,87 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Section About */}
+        {/* Section About - Modern & Clean version */}
         <section 
           id="about"
-          className="min-h-screen flex items-center justify-center bg-white py-20"
+          className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-white via-gray-50 to-gray-100 py-20 md:py-32 overflow-hidden"
         >
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-800">
+          {/* Optional subtle background decoration */}
+          <div className="absolute inset-0 opacity-20 pointer-events-none">
+            <div className="absolute -left-20 top-20 w-96 h-96 bg-indigo-300 rounded-full blur-3xl"></div>
+            <div className="absolute -right-20 bottom-20 w-96 h-96 bg-purple-300 rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="relative max-w-4xl mx-auto px-6 sm:px-8 lg:px-10 text-center z-10">
+            <h2 className="
+              text-4xl sm:text-5xl md:text-6xl 
+              font-extrabold tracking-tight 
+              bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 
+              bg-clip-text text-transparent 
+              mb-10 md:mb-12
+            ">
               About Me
             </h2>
-            <p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-10">
-              I'm a passionate developer with experience in building modern web applications 
-              using Next.js, React, TypeScript, Tailwind CSS, and more. I love turning ideas 
-              into beautiful, functional products.
+
+            <p className="
+              max-w-3xl mx-auto 
+              text-lg sm:text-xl md:text-2xl 
+              leading-relaxed text-gray-700 
+              font-light mb-12 md:mb-16
+            ">
+              I'm a passionate developer focused on crafting <span className="font-medium text-indigo-600">modern</span>, 
+              fast and delightful web experiences using 
+              <span className="font-medium text-purple-600"> Next.js</span>, 
+              <span className="font-medium text-pink-600"> TypeScript</span>, 
+              <span className="font-medium text-indigo-600"> Tailwind CSS</span> 
+              and friends. I enjoy turning ideas into clean, scalable, and user-loved products.
             </p>
-            <div className="flex flex-wrap justify-center gap-6">
-              <div className="bg-indigo-100 px-6 py-4 rounded-lg">
-                <h3 className="font-bold text-indigo-800">Next.js</h3>
-              </div>
-              <div className="bg-purple-100 px-6 py-4 rounded-lg">
-                <h3 className="font-bold text-purple-800">TypeScript</h3>
-              </div>
-              <div className="bg-pink-100 px-6 py-4 rounded-lg">
-                <h3 className="font-bold text-pink-800">Tailwind CSS</h3>
-              </div>
+
+            {/* Tech pills - มี shadow + hover effect */}
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+              {[
+                { name: "Next.js", color: "indigo" },
+                { name: "TypeScript", color: "blue" },
+                { name: "Tailwind CSS", color: "pink" },
+                // ถ้ามีเพิ่มก็ใส่ต่อได้เลย
+              ].map((tech) => (
+                <div
+                  key={tech.name}
+                  className={`
+                    group relative px-7 py-3.5 rounded-full 
+                    bg-white shadow-md hover:shadow-xl 
+                    border border-gray-100 
+                    transition-all duration-300 hover:-translate-y-1
+                    overflow-hidden
+                  `}
+                >
+                  {/* Gradient hover background */}
+                  <div className={`
+                    absolute inset-0 opacity-0 group-hover:opacity-10 
+                    bg-gradient-to-r from-${tech.color}-500 to-${tech.color}-600 
+                    transition-opacity duration-300
+                  `}></div>
+                  
+                  <h3 className={`
+                    relative font-semibold text-lg
+                    text-${tech.color}-700 group-hover:text-${tech.color}-800
+                    transition-colors duration-300
+                  `}>
+                    {tech.name}
+                  </h3>
+                </div>
+              ))}
+            </div>
+
+            {/* Optional: เพิ่มลูกเล่นนิดหน่อย เช่น ลิงก์ดู resume หรืออะไรสักอย่าง */}
+            <div className="mt-16">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl active:scale-95"
+              >
+                Get in Touch
+                <span aria-hidden>→</span>
+              </a>
             </div>
           </div>
         </section>
